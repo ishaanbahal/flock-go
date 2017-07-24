@@ -4,9 +4,9 @@ import "testing"
 import chats ".."
 
 const (
-	TOKEN      = "03d12122-6009-43fb-b28e-79201fed50d1"
-	CHAT       = "g:134385_ks"
-	CHANNEL_ID = "g:134385_ks"
+	TOKEN      = ""
+	CHAT       = ""
+	CHANNEL_ID = ""
 )
 
 func TestFetchMessags(t *testing.T) {
