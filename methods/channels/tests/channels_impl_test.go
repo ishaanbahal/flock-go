@@ -4,8 +4,8 @@ import "testing"
 import channels ".."
 
 const (
-	TOKEN      = "03d12122-6009-43fb-b28e-79201fed50d1"
-	CHANNEL_ID = "g:134385_ks"
+	TOKEN      = ""
+	CHANNEL_ID = ""
 
 	TOKEN_GARBAGE      = "random string"
 	CHANNEL_ID_GARBAGE = "random string"

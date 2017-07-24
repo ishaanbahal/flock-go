@@ -5,7 +5,7 @@ import "testing"
 import roster ".."
 
 const (
-	TOKEN = "03d12122-6009-43fb-b28e-79201fed50d1"
+	TOKEN = ""
 )
 
 func TestListContacts(t *testing.T) {

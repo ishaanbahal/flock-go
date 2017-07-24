@@ -4,8 +4,8 @@ import "testing"
 import user ".."
 
 const (
-	TOKEN   = "03d12122-6009-43fb-b28e-79201fed50d1"
-	USER_ID = "u:s3j3xsxn3k03xkjj"
+	TOKEN   = ""
+	USER_ID = ""
 )
 
 func TestGetInfo(t *testing.T) {
