@@ -1,18 +1,13 @@
-package tests
+package methods
 
 import "testing"
-import chats ".."
-
-const (
-	TOKEN      = ""
-	CHAT       = ""
-	CHANNEL_ID = ""
-)
+import chats "../../src/methods/chats"
+import config ".."
 
 func TestFetchMessags(t *testing.T) {
 	t.Log("Testing chat fetch messages API")
 	post := chats.PostImpl{}
-	res, err := post.FetchMessages(TOKEN, CHAT, []string{"1500894415927-f2G-m203"})
+	res, err := post.FetchMessages(config.TOKEN, config.CHAT, []string{"1500894415927-f2G-m203"})
 	if err != nil {
 		t.Errorf("Error occured:\n%s", err)
 		return
@@ -24,8 +19,8 @@ func TestSendMessage(t *testing.T) {
 	t.Log("Testing chat fetch messages API")
 	post := chats.PostImpl{}
 	testData := chats.SendMessage{
-		Token:    TOKEN,
-		To:       CHANNEL_ID,
+		Token:    config.TOKEN,
+		To:       config.CHANNEL_ID,
 		Text:     "test message",
 		Mentions: make([]string, 0),
 	}

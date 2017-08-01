@@ -1,20 +1,13 @@
-package test
+package methods
 
 import "testing"
-import channels ".."
-
-const (
-	TOKEN      = ""
-	CHANNEL_ID = ""
-
-	TOKEN_GARBAGE      = "random string"
-	CHANNEL_ID_GARBAGE = "random string"
-)
+import channels "../../src/methods/channels"
+import config ".."
 
 func TestGetInfoNegative(t *testing.T) {
 	t.Log("Testing wrong channel getInfo")
 	post := channels.PostImpl{}
-	_, err := post.GetInfo(TOKEN_GARBAGE, CHANNEL_ID_GARBAGE)
+	_, err := post.GetInfo(config.TOKEN_GARBAGE, config.CHANNEL_ID_GARBAGE)
 	if err != nil {
 		return
 	}
@@ -23,7 +16,7 @@ func TestGetInfoNegative(t *testing.T) {
 func TestGetInfoPositive(t *testing.T) {
 	t.Log("Testing correct channel getInfo")
 	post := channels.PostImpl{}
-	ret, err := post.GetInfo(TOKEN, CHANNEL_ID)
+	ret, err := post.GetInfo(config.TOKEN, config.CHANNEL_ID)
 	if err != nil {
 		t.Errorf("Error occured:\n%s", err)
 		return
@@ -34,7 +27,7 @@ func TestGetInfoPositive(t *testing.T) {
 func TestListNegative(t *testing.T) {
 	t.Log("Testing wrong channel listing")
 	post := channels.PostImpl{}
-	_, err := post.List(TOKEN_GARBAGE)
+	_, err := post.List(config.TOKEN_GARBAGE)
 	if err != nil {
 		return
 	}
@@ -43,7 +36,7 @@ func TestListNegative(t *testing.T) {
 func TestListPositive(t *testing.T) {
 	t.Log("Testing correct channel listing")
 	post := channels.PostImpl{}
-	ret, err := post.List(TOKEN)
+	ret, err := post.List(config.TOKEN)
 	if err != nil {
 		t.Errorf("Error occured:\n%s", err)
 		return
@@ -54,7 +47,7 @@ func TestListPositive(t *testing.T) {
 func TestListMembersNegative(t *testing.T) {
 	t.Log("Testing wrong channel listing")
 	post := channels.PostImpl{}
-	_, err := post.ListMembers(TOKEN_GARBAGE, CHANNEL_ID_GARBAGE, true)
+	_, err := post.ListMembers(config.TOKEN_GARBAGE, config.CHANNEL_ID_GARBAGE, true)
 	if err != nil {
 		return
 	}
@@ -63,7 +56,7 @@ func TestListMembersNegative(t *testing.T) {
 func TestListMembersPositive(t *testing.T) {
 	t.Log("Testing correct channel list members")
 	post := channels.PostImpl{}
-	ret, err := post.ListMembers(TOKEN, CHANNEL_ID, true)
+	ret, err := post.ListMembers(config.TOKEN, config.CHANNEL_ID, true)
 	if err != nil {
 		t.Errorf("Error occured:\n%s", err)
 		return
